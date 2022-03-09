@@ -1,4 +1,4 @@
-import {getRandomNumber,getCssProp, detectCollision} from '/utils/utils.js'
+import {getRandomNumber,getCssProp, detectCollision} from './utils/utils.js'
 Object.assign(window, {
     detectCollision
 })

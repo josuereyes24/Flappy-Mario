@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+}
+body{
+    margin: 0;
+    overflow: hidden;
+    font-family:'Press Start 2P', cursive; ;
+}
+
+#score{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+#gameoverscreen,#startScreen{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#gameoverscreen .backdrop, #startScreen .backdrop{
+    background: black;
+    opacity: .5;
+    width: 100%;
+    height: 100%;
+}
+#gameoverscreen .title,
+#gameoverscreen .score,
+#gameoverscreen button,
+#startScreen .title,
+#startScreen button{
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 150px);
+    width: 300px;
+    top: 40%;
+    text-align: center;
+    color: rgb(255, 255, 74);
+}
+#gameoverscreen .title, #startScreen .title{
+    margin-top: -65px;
+    font-size: 50px;
+    text-shadow: 5px 10px black;
+}
+#gameoverscreen button, #startScreen button{
+    margin-top: 50px;
+    color: black;
+    font-family: 'Press Start 2P', cursive;;
+    font-size: 24px;
+    padding: 5px 25px;
+    cursor: pointer;
+    border: 0;
+    box-shadow:5px 10px black;
+}
+#gameoverscreen .score{
+    margin-top: 150px;
+}
+#game{
+    height: 100vh;
+    overflow: hidden;
+   background: url(Assets/marioBG.jpg); 
+   background-position: bottom left;
+   background-size: cover;
+}
+
+
+#block{
+    height: 100vh;
+    background: url("Assets/Block.png");
+    background-position: center;
+    background-size: contain;
+    position: relative;
+}
+#hole{ 
+    height: 160px;
+    background-color:rgb(100, 149, 255);
+    background-size: contain;
+    position: relative;
+    top: -500px;
+    background-repeat: no-repeat;
+    
+}
+#block,#hole{
+    width: 60px;
+    left: 10vw;
+    
+}
+
+#char{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    background: url("Assets/Squirrel_Mario.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20vh;
+    left: 20vw;
+}
+
+.go-up{
+    animation: rotateUp 0.2s;
+    animation-fill-mode: forwards;
+}
+.go-down{
+    animation: rotateDown 0.2s;
+    animation-fill-mode: forwards;
+}
+@keyframes blockAnimation{
+    0%{
+        left:100vw;
+    }
+    100%{
+        left: -50px;
+    }
+}
+@keyframes rotateUp{
+    0%{ transform: rotate(0deg) }
+    100% {transform: rotate(-35deg)}
+}
+@keyframes rotateDown {
+    0%{ transform: rotate(0deg) }
+    100% {transform: rotate(35deg)}
+}
+@keyframes bgAnimation{
+    0%{ background-position-x:100vw;}
+    100%{background-position-x:0 ;}
+}
